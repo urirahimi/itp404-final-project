@@ -1,0 +1,19 @@
+<form onsubmit={{action 'createEmail'}}>
+    <div>
+        <label for="from">From</label>
+        {{input type="text" data-test="from" id="from" value=from}}
+    </div>
+    <div>
+        <label for="to">To</label>
+        {{input type="text" data-test="to" id="to" value=to}}
+    </div>
+    <div>
+        <label for="subject">Subject</label>
+        {{input type="text" data-test="subject" id="subject" value=subject}}
+    </div>
+    <div>
+        <label for="message">Message</label>
+        {{textarea rows="8" data-test="message" id="message" cols="80" value=message}}
+    </div>
+    <button data-test="send" id="send" type="submit">Send</button>
+</form>

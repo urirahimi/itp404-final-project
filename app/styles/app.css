@@ -1,0 +1,19 @@
+.preview {
+  width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  padding: 20px;
+  font-size: 1.3rem;
+  margin: 0;
+  background: white;
+  resize: horizontal;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: left;
+  background: #ccc;
+}
