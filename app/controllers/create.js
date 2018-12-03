@@ -2,7 +2,7 @@ import Controller from "@ember/controller";
 
 export default Controller.extend({
   actions: {
-    createEmail(e) {
+    createTodo(e) {
       e.preventDefault();
 
       let todo = this.store.createRecord("todo", {
