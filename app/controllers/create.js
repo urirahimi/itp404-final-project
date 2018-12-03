@@ -6,11 +6,11 @@ export default Controller.extend({
       e.preventDefault();
 
       let todo = this.store.createRecord("todo", {
-        to: this.to,
-        from: this.from,
+        dateMade: this.dateMade,
+        dueDate: this.dueDate,
         subject: this.subject,
         message: this.message,
-        starred: this.starred
+        completed: this.completed
       });
 
       todo.save().then(() => {

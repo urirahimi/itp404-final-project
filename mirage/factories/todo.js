@@ -4,11 +4,11 @@ export default Factory.extend({
   id() {
     return faker.random.uuid();
   },
-  from() {
-    return faker.internet.email();
+  dateMade() {
+    return faker.date.past();
   },
-  to() {
-    return faker.internet.email();
+  dueDate() {
+    return faker.date.future();
   },
   subject() {
     return faker.lorem.paragraph();
@@ -16,7 +16,7 @@ export default Factory.extend({
   message() {
     return faker.lorem.paragraphs();
   },
-  starred() {
+  completed() {
     return false;
   }
 });
