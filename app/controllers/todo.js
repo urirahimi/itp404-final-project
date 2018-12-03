@@ -2,10 +2,10 @@ import Controller from "@ember/controller";
 
 export default Controller.extend({
   actions: {
-    deleteEmail(email) {
+    deleteTodo(todo) {
       let confirmDelete = window.confirm("Are you sure you want to delete?");
       if (confirmDelete) {
-        email.destroyRecord();
+        todo.destroyRecord();
         this.transitionToRoute("index");
       }
     }

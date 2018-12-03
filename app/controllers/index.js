@@ -2,12 +2,12 @@ import Controller from "@ember/controller";
 
 export default Controller.extend({
   actions: {
-    deleteEmail(email) {
-      email.destroyRecord();
+    deleteTodo(todo) {
+      todo.destroyRecord();
     },
-    toggleStarred(email, newValue) {
-      email.set("starred", newValue);
-      email.save();
+    toggleStarred(todo, newValue) {
+      todo.set("starred", newValue);
+      todo.save();
     }
   }
 });

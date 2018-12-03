@@ -3,36 +3,36 @@
         <th>From</th>
         <th>Message</th>
     </tr>
-    {{!-- Displaying all starred emails --}}
+    {{!-- Displaying all starred todos --}}
     <h1>STARRED</h1>
-    {{#each model as |email|}} {{#if email.starred}}
+    {{#each model as |todo|}} {{#if todo.starred}}
     <tr>
         <td>
-            {{#link-to "email" email.id}} {{email.from}} {{/link-to}}
+            {{#link-to "todo" todo.id}} {{todo.from}} {{/link-to}}
         </td>
         <td class="preview">
-            <StarButton @starred={{email.starred}} @onClick={{action "toggleStarred" email}} />
-            <EmailTemplate @starred={{email.starred}} @email={{email}} />
+            <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
+            <TodoTemplate @starred={{todo.starred}} @todo={{todo}} />
         </td>
     </tr>
-    {{/if}} {{/each}} {{!-- // Displaying all emails --}}
-    <h1>ALL OTHER EMAILS</h1>
+    {{/if}} {{/each}} {{!-- // Displaying all todos --}}
+    <h1>ALL OTHER todoS</h1>
 
-    {{#each model as |email|}}
+    {{#each model as |todo|}}
     <tr>
         <td>
-            {{#link-to "email" email.id}} {{email.from}} {{/link-to}}
+            {{#link-to "todo" todo.id}} {{todo.from}} {{/link-to}}
         </td>
         <td class="preview">
-            {{#if email.starred}}
-            <div class="row" data-test="email.starred">
-                <StarButton @starred={{email.starred}} @onClick={{action "toggleStarred" email}} />
-                <EmailTemplate @starred={{true}} @email={{email}} /> {{!-- {{#link-to "email" email.id}} {{truncate-text email.message 60}} {{/link-to}} --}}
+            {{#if todo.starred}}
+            <div class="row" data-test="todo.starred">
+                <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
+                <TodoTemplate @starred={{true}} @todo={{todo}} /> {{!-- {{#link-to "todo" todo.id}} {{truncate-text todo.message 60}} {{/link-to}} --}}
             </div>
             {{else}}
-            <div class="row" data-test="email.unstarred">
-                <StarButton @starred={{email.starred}} @onClick={{action "toggleStarred" email}} />
-                <EmailTemplate @starred={{true}} @email={{email}} /> {{!-- {{#link-to "email" email.id}} {{truncate-text email.message 60}} {{/link-to}} --}}
+            <div class="row" data-test="todo.unstarred">
+                <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
+                <TodoTemplate @starred={{true}} @todo={{todo}} /> {{!-- {{#link-to "todo" todo.id}} {{truncate-text todo.message 60}} {{/link-to}} --}}
             </div>
             {{/if}}
 

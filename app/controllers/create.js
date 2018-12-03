@@ -5,7 +5,7 @@ export default Controller.extend({
     createEmail(e) {
       e.preventDefault();
 
-      let email = this.store.createRecord("email", {
+      let todo = this.store.createRecord("todo", {
         to: this.to,
         from: this.from,
         subject: this.subject,
@@ -13,7 +13,7 @@ export default Controller.extend({
         starred: this.starred
       });
 
-      email.save().then(() => {
+      todo.save().then(() => {
         this.transitionToRoute("index");
       });
     }
