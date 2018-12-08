@@ -1,8 +1,12 @@
 <form id="createForm" onsubmit={{action 'createTodo'}}>
 
     <div>
-        <label for="dueDate">Due Date</label>
-        {{input type="text" data-test="dueDate" id="dueDate" value=dueDate}}
+        <label>
+            Due date:
+            {{pikaday-input onSelection=(action 'doSomething') type="text" id="dueDate" value=dueDate
+            format="MM/DD/YYYY"}}
+        </label>
+
         <span id="dueDateError" for="dueDateError"></span>
 
     </div>

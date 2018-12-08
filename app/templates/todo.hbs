@@ -1,13 +1,19 @@
-<button data-test="delete-button" type="button" onclick={{action 'deleteTodo' model}}>
-    Delete
-</button>
-<h1 data-test="dateMade">{{model.dateMade}}</h1>
-<p data-test="dueDate">{{model.dueDate}}</p>
-<p data-test="subject">{{model.subject}}</p>
-<p data-test="message">{{model.message}}</p>
+<div class="row" margin="auto">
+    <div class="col-md-4 col-sm-6 content-card">
+        <div class="notice-card-shadow">
+            <div class="notice-card card-information">
+                <div class="content">
+                    <div class="main-cat">{{model.subject}}</div>
+                    <h3>Due Date: {{model.dueDate}}</h3>
+                    <h4>Date Made: {{model.dateMade}}</h4>
+                    <p class="description">{{model.message}}</p>
+                    <button data-test="delete-button" type="button" onclick={{action 'deleteTodo' model}}>
+                        Delete
+                    </button>
+                </div>
 
-
-
-
-
+            </div>
+        </div>
+    </div>
+</div>
 {{outlet}}
