@@ -1,4 +1,5 @@
 import Controller from "@ember/controller";
+import moment from "moment";
 
 export default Controller.extend({
   actions: {
@@ -6,9 +7,7 @@ export default Controller.extend({
       e.preventDefault();
 
       // Form Validation
-      if (this.dateMade === "") {
-        $("#dateMadeError").text("Input cannot be empty");
-      } else if (this.dueDate === "") {
+      if (this.dueDate === "") {
         $("#dueDateError").text("Input cannot be empty");
       } else if (this.subject === "") {
         $("#subjectError").text("Input cannot be empty");
@@ -16,7 +15,7 @@ export default Controller.extend({
         $("#messageError").text("Input cannot be empty");
       } else {
         let todo = this.store.createRecord("todo", {
-          dateMade: this.dateMade,
+          dateMade: moment().format("DD/MM/YYYY"),
           dueDate: this.dueDate,
           subject: this.subject,
           message: this.message,

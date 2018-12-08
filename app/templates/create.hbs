@@ -1,13 +1,10 @@
 <form onsubmit={{action 'createTodo'}}>
-    <div>
-        <label for="dateMade">dateMade</label>
-        {{input type="text" data-test="dateMade" id="dateMade" value=dateMade}}
-        <span id="dateMadeError" for="dateMadeError"></span>
-    </div>
+
     <div>
         <label for="dueDate">dueDate</label>
         {{input type="text" data-test="dueDate" id="dueDate" value=dueDate}}
         <span id="dueDateError" for="dueDateError"></span>
+
     </div>
     <div>
         <label for="subject">Subject</label>
@@ -15,9 +12,9 @@
         <span id="subjectError" for="subjectError"></span>
     </div>
     <div>
-        <label for="message">Message</label>
+        <label for="message">Todo Details</label>
         {{textarea rows="8" data-test="message" id="message" cols="80" value=message}}
         <span id="messageError" for="messageError"></span>
     </div>
-    <button data-test="send" id="send" type="submit">Send</button>
+    <button data-test="send" id="send" type="submit">Save Todo</button>
 </form>

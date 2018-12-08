@@ -1,5 +1,9 @@
-<nav>
-    {{#link-to "create"}} Compose {{/link-to }} {{#link-to "index"}} Inbox {{/link-to }} {{#link-to "trash"}} Trash {{/link-to
-    }} {{#link-to "sent"}} Sent {{/link-to }}
+<nav class="topnav">
+    <a>{{#link-to "create"}} Compose {{/link-to }}</a>
+    <a> {{#link-to "index"}} Home {{/link-to }}</a>
+    <a>{{#link-to "trash"}} Trash
+        {{/link-to
+        }} </a>
+    <a> {{#link-to "sent"}} Sent {{/link-to }}</a>
 </nav>
 {{outlet}}
