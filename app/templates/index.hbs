@@ -6,6 +6,9 @@
     {{!-- Displaying all starred todos --}}
     <h1>Items on Todo List</h1>
     {{#each model as |todo|}} {{#if todo.starred}}
+
+
+    {{else}}
     <tr>
         <td>
             {{#link-to "todo" todo.id}} {{todo.from}} {{/link-to}}
@@ -15,32 +18,9 @@
             <TodoTemplate @starred={{todo.starred}} @todo={{todo}} />
         </td>
     </tr>
-    {{/if}} {{/each}} {{!-- // Displaying all todos --}}
-    <h1>Completed Todos</h1>
+    {{/if}}
+    {{/each}} {{!-- // Displaying all todos --}}
 
-    {{#each model as |todo|}}
-    <tr>
-        <td>
-            {{#link-to "todo" todo.id}} {{todo.from}} {{/link-to}}
-        </td>
-        <td class="preview">
-            {{#if todo.starred}}
-            <div class="row" data-test="todo.starred">
-                <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
-                <TodoTemplate @starred={{true}} @todo={{todo}} /> {{!-- {{#link-to "todo" todo.id}} {{truncate-text
-                todo.message 60}} {{/link-to}} --}}
-            </div>
-            {{else}}
-            <div class="row" data-test="todo.unstarred">
-                <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
-                <TodoTemplate @starred={{true}} @todo={{todo}} /> {{!-- {{#link-to "todo" todo.id}} {{truncate-text
-                todo.message 60}} {{/link-to}} --}}
-            </div>
-            {{/if}}
-
-        </td>
-    </tr>
-    {{/each}}
 
 </table>
 
