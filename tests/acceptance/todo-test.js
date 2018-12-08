@@ -22,7 +22,7 @@ module("Acceptance | todo", function(hooks) {
   });
 
   test("Delete a single Todo", async function(assert) {
-    server.create("todo", {
+    const todo1 = server.create("todo", {
       dateMade: moment().subtract(1, "days"),
       dueDate: moment(),
       subject: "First Todo",
