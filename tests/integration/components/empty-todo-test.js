@@ -1,26 +1,24 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from "qunit";
+import { setupRenderingTest } from "ember-qunit";
+import { render } from "@ember/test-helpers";
+import hbs from "htmlbars-inline-precompile";
 
-module('Integration | Component | empty-todo', function(hooks) {
+module("Integration | Component | empty-todo", function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  test("Testing to see if the conditional rendering works", async function(assert) {
+    this.set("completed", true);
 
-    await render(hbs`{{empty-todo}}`);
+    await render(hbs`<EmptyTodo @completed={{true}} data-test="subject" />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom('data-test="subject"').hasText("Yo do not have any completed TODOs");
+  });
 
-    // Template block usage:
-    await render(hbs`
-      {{#empty-todo}}
-        template block text
-      {{/empty-todo}}
-    `);
+  test("Testing to see if the conditional rendering works (with false)", async function(assert) {
+    this.set("completed", false);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    await render(hbs`<EmptyTodo @completed={{false}} data-test="subject" />`);
+
+    assert.dom('data-test="subject"').hasText("Yo do not have any TODOs");
   });
 });

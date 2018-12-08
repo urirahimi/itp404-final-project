@@ -1,5 +1,5 @@
 import { module, test } from "qunit";
-import { visit, currentURL, click, fillIn } from "@ember/test-helpers";
+import { visit, click } from "@ember/test-helpers";
 import { setupApplicationTest } from "ember-qunit";
 import setupMirage from "ember-cli-mirage/test-support/setup-mirage";
 import moment from "moment";
@@ -9,7 +9,7 @@ module("Acceptance | todo", function(hooks) {
   setupMirage(hooks);
 
   test("Testing the read function", async function(assert) {
-    const Todo = server.create("todo", {
+    server.create("todo", {
       dateMade: moment().subtract(1, "days"),
       dueDate: moment(),
       subject: "First Todo",
@@ -22,7 +22,7 @@ module("Acceptance | todo", function(hooks) {
   });
 
   test("Delete a single Todo", async function(assert) {
-    const todo1 = server.create("todo", {
+    server.create("todo", {
       dateMade: moment().subtract(1, "days"),
       dueDate: moment(),
       subject: "First Todo",
@@ -59,21 +59,21 @@ module("Acceptance | todo", function(hooks) {
 
   test("Testing the create function with 3 Todos", async function(assert) {
     // Create the
-    const Todo = server.create("todo", {
+    server.create("todo", {
       dateMade: moment().subtract(1, "days"),
       dueDate: moment(),
       subject: "First Todo",
       message: "Message for the first todo",
       completed: false
     });
-    const Todo2 = server.create("todo", {
+    server.create("todo", {
       dateMade: moment().subtract(1, "days"),
       dueDate: moment(),
       subject: "First Todo",
       message: "Message for the first todo",
       completed: false
     });
-    const Todo3 = server.create("todo", {
+    server.create("todo", {
       dateMade: moment().subtract(1, "days"),
       dueDate: moment(),
       subject: "First Todo",
@@ -86,7 +86,7 @@ module("Acceptance | todo", function(hooks) {
 
   test("Testing the delete function with 3 creates and two deletes", async function(assert) {
     // Create the
-    const Todo = server.create("todo", {
+    server.create("todo", {
       dateMade: moment().subtract(1, "days"),
       dueDate: moment(),
       subject: "First Todo",
