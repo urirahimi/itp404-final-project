@@ -1,3 +1,4 @@
+{{#if model}}
 <table style="width:50%" id="todosTable">
     <h1>Completed Todos</h1>
     <tr>
@@ -19,8 +20,13 @@
         </td>
     </tr>
     {{/if}}
+
     {{/each}}
 
 </table>
+{{else}}
+<EmptyTodo @completed={{true}} />
+{{/if}}
+{{outlet}}
 
 {{outlet}}

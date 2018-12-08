@@ -22,7 +22,7 @@ export default Controller.extend({
           message: this.message,
           completed: this.completed
         });
-
+        window.alert("Your Todo has been saved!");
         todo.save().then(() => {
           this.transitionToRoute("index");
         });

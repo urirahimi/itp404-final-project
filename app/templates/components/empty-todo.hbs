@@ -1,0 +1,20 @@
+<div class="row" margin="auto">
+    <div class="col-md-4 col-sm-6 content-card">
+        <div class="notice-card-shadow">
+            <div class="notice-card card-information">
+                <div class="content">
+                    {{#if @completed }}
+                    <div data-test="subject" class="main-cat">Yo do not have any completed TODOs</div>
+                    <h3> Please complete some todos or create some more.</h3>
+                    <a>{{#link-to "create"}} Create {{/link-to }}</a>
+                    {{else}}
+                    <div data-test="subject" class="main-cat">Yo do not have any TODOs</div>
+                    <h3> Please visit the create page to make some.</h3>
+                    <a>{{#link-to "create"}} Create {{/link-to }}</a>
+                    {{/if}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

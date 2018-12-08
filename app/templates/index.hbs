@@ -1,3 +1,4 @@
+{{#if model}}
 <table style="width:50%" id="todosTable">
     <h1>Items on Todo List</h1>
     <tr>
@@ -5,16 +6,11 @@
         <th>Title</th>
         <th>Due Date</th>
     </tr>
-    {{!-- Displaying all starred todos --}}
-
     {{#each model as |todo|}} {{#if todo.starred}}
-
-
     {{else}}
     <tr>
         <td>
             <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
-
         </td>
         <td data-test="emails">
             {{#link-to "todo" todo.id}} {{todo.subject}} {{/link-to}}
@@ -25,8 +21,9 @@
     </tr>
     {{/if}}
     {{/each}}
-
-
 </table>
+{{else}}
 
+<EmptyTodo @completed={{false}} />
+{{/if}}
 {{outlet}}
