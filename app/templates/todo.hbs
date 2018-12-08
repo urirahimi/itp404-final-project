@@ -3,10 +3,10 @@
         <div class="notice-card-shadow">
             <div class="notice-card card-information">
                 <div class="content">
-                    <div class="main-cat">{{model.subject}}</div>
-                    <h3>Due Date: {{model.dueDate}}</h3>
-                    <h4>Date Made: {{model.dateMade}}</h4>
-                    <p class="description">{{model.message}}</p>
+                    <div data-test="subject" class="main-cat">{{model.subject}}</div>
+                    <h3 data-test="dueDate">Due Date: {{model.dueDate}}</h3>
+                    <h4 data-test="dateMade">Date Made: {{model.dateMade}}</h4>
+                    <p data-test="message" class="description">{{model.message}}</p>
                     <button data-test="delete-button" type="button" onclick={{action 'deleteTodo' model}}>
                         Delete
                     </button>

@@ -16,7 +16,7 @@
             <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
 
         </td>
-        <td>
+        <td data-test="emails">
             {{#link-to "todo" todo.id}} {{todo.subject}} {{/link-to}}
         </td>
         <td>
