@@ -1,19 +1,36 @@
-<table style="width:50%">
+<table style="width:50%" id="todosTable">
     <h1>Completed Todos</h1>
-    {{#each model as |todo|}}
     <tr>
+        <th>Undo</th>
+        <th>Title</th>
+        <th>Due Date</th>
+    </tr>
+    {{#each model as |todo|}}
+    {{#if todo.starred}}
+    <tr>
+        <td>
+            <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
+        </td>
+        <td>
+            {{#link-to "todo" todo.id}} {{todo.subject}} {{/link-to}}
+        </td>
+        <td>
+            {{todo.dueDate}}
+        </td>
+    </tr>
+    {{/if}}
+    {{!-- <tr>
         <td class="preview">
             {{#if todo.starred}}
             <div class="row" data-test="todo.starred">
                 <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
-                <TodoTemplate @starred={{true}} @todo={{todo}} /> {{!-- {{#link-to "todo" todo.id}} {{truncate-text
-                todo.message 60}} {{/link-to}} --}}
+                <TodoTemplate @starred={{true}} @todo={{todo}} />
             </div>
 
             {{/if}}
 
         </td>
-    </tr>
+    </tr> --}}
     {{/each}}
 
 </table>

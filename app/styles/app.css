@@ -1,28 +1,30 @@
-/* .preview {
-  width: 30%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  padding: 20px;
-  font-size: 1.3rem;
-  margin: 0;
-  background: white;
-  resize: horizontal;
+#todosTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-body {
-  height: 100vh;
-  display: grid;
-  place-items: left;
-  background: #ccc;
+#todosTable td,
+#todosTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-} */
 
-/* Style the links inside the navigation bar */
+#todosTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#todosTable tr:hover {
+  background-color: #ddd;
+}
+
+#todosTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;

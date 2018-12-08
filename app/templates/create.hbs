@@ -1,13 +1,13 @@
 <form id="createForm" onsubmit={{action 'createTodo'}}>
 
     <div>
-        <label for="dueDate">dueDate</label>
+        <label for="dueDate">Due Date</label>
         {{input type="text" data-test="dueDate" id="dueDate" value=dueDate}}
         <span id="dueDateError" for="dueDateError"></span>
 
     </div>
     <div>
-        <label for="subject">Subject</label>
+        <label for="subject">Title</label>
         {{input type="text" data-test="subject" id="subject" value=subject}}
         <span id="subjectError" for="subjectError"></span>
     </div>

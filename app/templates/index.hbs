@@ -1,24 +1,39 @@
-<table style="width:50%">
+<table style="width:50%" id="todosTable">
+    <h1>Items on Todo List</h1>
     <tr>
-        <th>From</th>
-        <th>Message</th>
+        <th>Complete</th>
+        <th>Title</th>
+        <th>Due Date</th>
     </tr>
     {{!-- Displaying all starred todos --}}
-    <h1>Items on Todo List</h1>
+
     {{#each model as |todo|}} {{#if todo.starred}}
 
 
     {{else}}
     <tr>
         <td>
-            {{#link-to "todo" todo.id}} {{todo.from}} {{/link-to}}
+            <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
+
+        </td>
+        <td>
+            {{#link-to "todo" todo.id}} {{todo.subject}} {{/link-to}}
+        </td>
+        <td>
+            {{todo.dueDate}}
+        </td>
+    </tr>
+    {{/if}}
+    {{!-- <tr>
+        <td>
+            {{#link-to "todo" todo.id}} {{todo.subject}} {{/link-to}}
         </td>
         <td class="preview">
             <StarButton @starred={{todo.starred}} @onClick={{action "toggleStarred" todo}} />
             <TodoTemplate @starred={{todo.starred}} @todo={{todo}} />
         </td>
     </tr>
-    {{/if}}
+    {{/if}} --}}
     {{/each}} {{!-- // Displaying all todos --}}
 
 
